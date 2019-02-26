@@ -1,3 +1,4 @@
+<!-- This is where items that were entered show up in the application -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
@@ -5,8 +6,9 @@
     <title>Title</title>
 </head>
 <body>
+
     <a href="/add">Add a Job</a><br>
-    <div th:each="job : ${jobs}">
+    <div th:each="job : ${jobs}"> <!-- The view has to iterate through it using th:each -->
         <h4 th:inline="text">[[${job.title}]] @ [[${job.employer}]]</h4>
         <p th:text="${job.description}"></p>
 

@@ -1,3 +1,7 @@
+<!-- This form has two purposes
+1. accepts info from the user
+2. informs user about invalid data they entered, after form is submitted-->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
@@ -9,16 +13,20 @@
           th:action="@{/process}"
           th:object="${job}"
           method="post">
+
         Title :<input type="text" th:field="*{title}">
+        <!--what's inside the th:if statement check for errors-->
         <span th:if="${#fields.hasErrors('title')}"
               th:errors="*{title}"></span><br>
 
         Employer :<input type="text" th:field="*{employer}">
         <span th:if="${#fields.hasErrors('employer')}"
               th:errors="*{employer}"></span><br>
+
         Description :<textarea rows="3" th:field="*{description}"></textarea>
         <span th:if="${#fields.hasErrors('description')}"
               th:errors="*{description}"></span><br>
+
         <input type="submit" value="Submit">
 
     </form>

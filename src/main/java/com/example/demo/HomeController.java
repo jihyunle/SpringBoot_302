@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; // Autowired instantiates the object for you each time app runs
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,7 +19,7 @@ public class HomeController {
     @RequestMapping("/")
     public String listJobs(Model model){
         model.addAttribute("jobs", jobRepository.findAll());
-        return "list";
+        return "list";sssss
     }
 
     @GetMapping("/add")
